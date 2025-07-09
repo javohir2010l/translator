@@ -10,7 +10,7 @@ user_language = {}
 @router.message(CommandStart())
 async def start(message: Message):
     await message.reply(
-        "Assalomu alaykum! Bu bot sizga iboralarni tarjima qilib beradi!\nTilni tanlang:",
+        "Assalomu alaykum! Bu bot sizga iboralarni tarjima qilib beradi!\nTarjima qilinadigan tilni tanlang:",
         reply_markup=Keyboard
     )
 
@@ -26,7 +26,7 @@ async def trans(message: Message):
             'english': 'en'
         }
         user_language[user_id] = lang_map[text]
-        await message.reply(f"Til tanlandi: {text}. Endi matn yuboring.")
+        await message.reply(f"Tarjima qilinadigan til tanlandi: {text}. Endi matn yuboring.")
         return
 
     lang = user_language.get(user_id, 'uz')
